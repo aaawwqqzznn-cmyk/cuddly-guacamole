@@ -1339,7 +1339,7 @@ window.addEventListener('touchend', (e) => {
 
   if (Math.abs(dx) > Math.abs(dy)) {
     if (Math.abs(dx) > SWIPE_THRESHOLD) {
-      moveLane(dx > 0 ? 1 : -1);
+      moveLane(dx > 0 ? -1 : 1);
     }
   } else {
     if (Math.abs(dy) > SWIPE_THRESHOLD) {
@@ -1352,8 +1352,8 @@ window.addEventListener('touchend', (e) => {
 // Mobile button controls
 document.getElementById('btn-up').addEventListener('pointerdown', (e) => { e.preventDefault(); if (gamePhase === 'playing') jump(); });
 document.getElementById('btn-down').addEventListener('pointerdown', (e) => { e.preventDefault(); if (gamePhase === 'playing') slide(); });
-document.getElementById('btn-left').addEventListener('pointerdown', (e) => { e.preventDefault(); if (gamePhase === 'playing') moveLane(-1); });
-document.getElementById('btn-right').addEventListener('pointerdown', (e) => { e.preventDefault(); if (gamePhase === 'playing') moveLane(1); });
+document.getElementById('btn-left').addEventListener('pointerdown', (e) => { e.preventDefault(); if (gamePhase === 'playing') moveLane(1); });
+document.getElementById('btn-right').addEventListener('pointerdown', (e) => { e.preventDefault(); if (gamePhase === 'playing') moveLane(-1); });
 
 // Restart
 restartBtn.addEventListener('click', () => resetState());
